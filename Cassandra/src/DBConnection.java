@@ -16,7 +16,7 @@ public class DBConnection implements AutoCloseable{
 			cluster = Cluster.builder().addContactPoint(serverIp).build();
 			session = cluster.connect("system");
 		}catch(Exception e) {
-			log.debug("Session Could not be created for: " + serverIp + "!!\n" + e);
+			log.error("Session Could not be created for: " + serverIp + "!!\n" + e);
 		 }
 		return session;
 	}
